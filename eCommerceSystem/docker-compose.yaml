@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  e-commerce:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '1244:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+  adminer:
+    image: dockette/adminer:full-php5
+    ports:
+      - '4577:8080'
+volumes:
+  my-db:
